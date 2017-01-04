@@ -1,0 +1,20 @@
+extends ../shared/layout
+block main-content
+    .page-header
+        h1 Log In
+    if(globalError)
+        h3.center-header=globalError
+    .panel.panel-default
+        .panel-body
+            .col-sm-12.col-md-10.col-md-offset-1
+            form(method="post" action="/users/authenticate")
+                .form-group.input-group
+                    span.input-group-addon
+                        i.glyphicon.glyphicon-user
+                    input.form-control(type="text" , name="username" , id="username", placeholder="username")
+                .form-group.input-group
+                    span.input-group-addon
+                        i.glyphicon.glyphicon-lock
+                    input.form-control(type="password" , name="password" , id="password", placeholder="password")
+                .form-group
+                    input.btn.btn-def.btn-block(type="submit", value="Log In")

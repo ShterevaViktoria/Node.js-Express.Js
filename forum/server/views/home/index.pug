@@ -1,0 +1,11 @@
+extends ../shared/layout
+block main-content
+    .page-header
+        h1 Wellcome
+    .center-block
+        .btn-group(role="group" aria-label="...")
+            a.btn.btn-default(href="/newest" role="button") newest
+            a.btn.btn-default(href="/liked" role="button") most liked
+            a.btn.btn-default(href="/viewed" role="button") most viewed
+    block sort-content
+    script(src="/javascripts/buttons-active.js")

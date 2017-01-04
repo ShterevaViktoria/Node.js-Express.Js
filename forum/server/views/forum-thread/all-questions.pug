@@ -1,0 +1,27 @@
+extends find-questions
+block content
+    each question in questions
+        div.head-post
+            div.characteristic
+                div.stats
+                    p
+                        =question.likes
+                    p likes
+                    p
+                        =question.views
+                    p views
+            div.summary
+                h3
+                    a(href='/post/' + question.id + '/' + question.title)
+                        =question.title
+                .question-content
+                    =question.description
+                .question-time
+                    =question.created_date
+                    if(isAdmin)
+                        a.remove(href='/delete/' + question.title) Remove
+    ul.pagination
+        each as in myArr
+            li
+                a(href='?page='+as)
+                    =as

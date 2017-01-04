@@ -1,0 +1,21 @@
+extends ../shared/layout
+block main-content
+    .page-header
+        h1 Profile
+        div
+            ul
+                li
+                    =user.username
+                li
+                    =user.firstName
+                li
+                    =user.lastName
+        div
+            p Questions
+                each aa in arr
+                    p
+                        =aa.title
+            p Answers
+                each j in jj
+                    p
+                        =j.description

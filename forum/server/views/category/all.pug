@@ -1,0 +1,20 @@
+extends ../shared/layout
+block main-content
+    .page-header
+        h1 Category
+    .center-block
+    each category in categories
+        .head-post
+            div.center-block
+                a(href='/list/category/'+category.title)
+                    =category.title
+                    if(isAdmin)
+                        a.remove(href='/remove/'+category.title) Remove
+    if(isAdmin)
+        div
+            form(method="post" action="/category/add")
+                label(for="title") Title
+                br
+                input(type="title" , name="title" , id="title")
+                br
+                input(type="submit", value="Create")

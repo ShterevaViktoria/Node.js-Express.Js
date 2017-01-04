@@ -1,0 +1,20 @@
+extends ../home/index
+block sort-content
+    each question in questions
+        div.head-post
+            div.characteristic
+                div.stats
+                    p
+                        =question.likes
+                    p likes
+                    p
+                        =question.views
+                    p views
+            div.summary
+                h3
+                    a(href='/post/'+question.id+'/'+question.title)
+                        =question.title
+                .question-content
+                    =question.description
+                .question-time
+                    =question.created_date

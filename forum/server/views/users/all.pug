@@ -1,0 +1,7 @@
+extends ../shared/layout
+block main-content
+    h1 Users
+    each ar in arr
+        div
+            a(href='#')
+                =ar.username

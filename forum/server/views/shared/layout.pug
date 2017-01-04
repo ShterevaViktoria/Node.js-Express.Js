@@ -1,0 +1,31 @@
+doctype
+html
+    head
+        title Forum
+        link(href="/css/bootstrap.min.css" rel="stylesheet")
+        link(href="/css/site.css" rel="stylesheet")
+        script(src="/javascripts/bootstrap.min.js")
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+    body
+        nav.navbar.navbar-default.navbar-fixed-top
+            .container
+                ul.nav.nav-pills
+                    li
+                        a(href="/") Home
+                    li
+                        a(href="/list/category") Forum
+                    if(currentUser)
+                        li
+                            a(href="/profile") Profile
+                        li
+                            form#logout-form(method="post" action="/users/logout")
+                                a(href="javascript:document.getElementById('logout-form').submit()") Log Out
+                        li
+                            a(href="/forum-thread/create") Ask Question
+                    else
+                        li
+                            a(href="/users/register") Register
+                        li
+                            a(href="/users/login") Log In
+        block main-content
+

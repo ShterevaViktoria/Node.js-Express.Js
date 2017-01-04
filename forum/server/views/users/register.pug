@@ -1,0 +1,30 @@
+extends ../shared/layout
+block main-content
+    .page-header
+        h1 Register
+    if(globalError)
+        h3.center-header=globalError
+    form.form-horizontal(method="post" action="/users/create")
+        .form-group
+            label.col-sm-2.control-label(for="username") Username
+            .col-sm-3
+                input.form-control(type="text" , name="username" , id="username" value=username)
+        .form-group
+            label.col-sm-2.control-label(for="password") Password
+            .col-sm-3
+                input.form-control(type="password" , name="password" , id="password")
+        .form-group
+            label.col-sm-2.control-label(for="confirm-password") Confirm Password
+            .col-sm-3
+                input.form-control(type="password" , name="confirmPassword" , id="confirm-password")
+        .form-group
+            label.col-sm-2.control-label(for="first-name") First Name
+            .col-sm-3
+                input.form-control(type="text" , name="firstName" , id="first-name" value=firstName)
+        .form-group
+            label.col-sm-2.control-label(for="last-name") Last Name
+            .col-sm-3
+                input.form-control(type="text" , name="lastName" , id="last-name" value=lastName)
+        .form-group
+            .col-sm-offset-2.col-sm-3
+                input.btn.btn-default(type="submit", value="Register")

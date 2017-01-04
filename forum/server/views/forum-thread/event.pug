@@ -1,0 +1,16 @@
+table.table
+    thead
+        tr
+            th #
+            th Name
+        tbody
+            each event, i in events
+                tr
+                    td= 10 * page + (i + 1)
+                    td
+                        a(href="/admin/events/"+event._id)= event.title
+
+if (pages > 1)
+    .pagination
+        ul
+            != createPagination(pages, page)

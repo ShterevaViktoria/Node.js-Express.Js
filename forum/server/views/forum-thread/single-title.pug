@@ -1,0 +1,28 @@
+extends ../shared/layout
+block main-content
+    .page-header
+        h1
+            =question.title
+    .post-text
+        p
+            =question.description
+    .answers-header
+        .subheader
+            h3 Answers
+    div
+            each answer in answers
+                .post-text
+                    p
+                        =answer.description
+                        if(isAdmin)
+                            a.remove(href='/drop/' + answer._id) Remove
+
+    if(currentUser)
+        div
+            form(method="post" action="/create/answer/"+question._id)
+                label(for="description")
+                br
+                input(type="text" , name="description" , id="description")
+                br
+                input(type="submit", value="Create")
+
